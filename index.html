@@ -1,18 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal</title>
-    <style>
-        body {
-            background-color: black;
-            color: rgb(41, 206, 41);
-        }
-    </style>
-</head>
-<body>
-    <script>
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Fake terminal</title>
+        <style>
+            body {
+                background-color: #000000;
+                font-family: 'Courier New', Courier, monospace;
+                color: #00ff00;
+            }
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                width: 100%;
+                color: #00ff00;
+                white-space: pre-wrap;
+            }
+            .h1 {
+                margin: 0;
+                font-size: 40px;
+            }
+            .line {
+                width: calc (100vw - 16px);
+                height: 1px;
+                margin-bottom: 20px;
+                background-color: greenyellow;
+            }
+            .A {
+                position: relative;
+                top: 40px;
+            }
+            #output {
+                white-space: pre-wrap;
+            }
+            .input-line {
+                display: flex;
+                align-items: center;
+            }
+            .prompt {
+                margin-right: 10px;
+            }
+            input {
+                background-color: transparent;
+                border: none;
+                font-family: inherit;
+                font-size: inherit;
+                outline: none;
+                flex-grow: 1;
+                color: rgb(0, 255, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1>
+                <span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span>_</span><span>_</span><span>_</span><span> </span>
+                <span>|</span><span>_</span><span>|</span><span> </span><span>/</span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>|</span><span>/</span><span> </span><span>|</span><span>_</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span>
+                <span>|</span><span> </span><span> </span><span>/</span><span>/</span><span>\</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span>|</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span>
+
+
+            </h1>
+        </div>
+        
+
+        <div class="line"></div>
+        <div id="output"><span style="color: rgb(238, 255, 0);">Welcome</span><span>&nbsp</span>to the test fake terminal. type `help` to get started!</div>
+
+        <form id="terminal-form" class="input-line">
+            <span class="prompt">hacker@fake-terminal:~$</span>
+            <input type="text" id="command-input" autocomplete="off" autofocus>
+        </form>
+
+        <script>
+            const form = document.getElementById('terminal-form');
+            const input = document.getElementById('command-input');
+            const output = document.getElementById('output');
+
+            form.addEventListener('submit', function(event) {
+                // stop page from reloading
+                event.preventDefault();
+
+                const command = input.value.trim();
+                if (command == '') return;
+                
+                // echo the command back to the screen
+                output.innerHTML += '\nhacker@fake-terminal:~$ ' + command;
+                
+                // processing command logic called
+                processCommand(command);
+
+                // clear input box and scroll down
+                input.value = '';
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+
+            function processCommand(cmd) {
+                const lowerCmd = cmd.toLowerCase();
+
+                const githubRealyStupid = "https://github.com/RealyStupid"; 
+                const githubPacketError = "https://github.com/PacketError";
+
+                let directory = 'root';
+                // basic help command
+                if(lowerCmd === 'help') {
+                    output.innerHTML += `\n<div>Welcome To A fake terminal made by <a href="${githubRealyStupid}" target="_blank" style="color: #00ff00; text-decoration: underline;">RealyStupid</a> and <a href="${githubPacketError}" target="_blank" style="color: #00ff00; text-decoration: underline;">Packet Error</a>!\nHere is a list of some commmands:\nls) list existing files \ncat) read the context of the files</div>`;
+
+                    const newDiv = output.lastElementChild;
+                    if(newDiv) {
+                        newDiv.style.color = "#00ae00";
+                        newDiv.style.margin = "0";        // Removes top/bottom space
+                        newDiv.style.padding = "0";       // Removes inner space
+                        newDiv.style.display = "inline";  // Makes it behave like text, removing block spacing entirely
+                    }
+                }
+                // changing directories
+                else if(lowerCmd === 'cd') {
+                    directory = 'root';
+                    output.innerHTML += ``;
+                }
+                else if(lowerCmd === 'cd realystupid'){
+                    directory = 'RealyStupid';
+                    output.innerHTML += ``;
+                }
+                else if(lowerCmd === 'cd packet_error'){
+                    directory = 'Packet_Error';
+                    output.innerHTML += ``;
+                }
+                // inside root dir
+                else if(lowerCmd === 'ls' && directory == 'root'){
+                    // create 2 folders: a page for RealyStupid and one for Packet Error
+                    output.innerHTML += `<div style="color: #00baff; margin: 0px; padding: 0px;">RealyStupid</div>`;
+                    output.innerHTML += `<div style="color: #00baff; margin: 0px; padding: 0px;">Packet_Error</div>`;
+                }
+                else if(lowerCmd === 'ls' && directory === 'RealyStupid'){
+                    // create 2 folders: a page for RealyStupid and one for Packet Error
+                    output.innerHTML += `<div style="color: #00baff; margin: 0px; padding: 0px;">ReaddddlyStupid</div>`;
+                    output.innerHTML += `<div style="color: #00baff; margin: 0px; padding: 0px;">Packet_Error</div>`;
+                }
+                else if(lowerCmd === 'ls' && directory === 'Packet_Error'){
+                    // create 2 folders: a page for RealyStupid and one for Packet Error
+                    output.innerHTML += `<div style="color: #00baff; margin: 0px; padding: 0px;">RealyrrrrStupid</div>`;
+                    output.innerHTML += `<div style="color: #00baff; margin: 0px; padding: 0px;">Packet_Error</div>`;
+                }
+                else if(lowerCmd === 'clear') {
+                    output.innerHTML = '';
+                }
+                else {
+                    output.innerHTML += '\nCommand not found...'
+                }
+            }
+        </script>
+    </body>
 </html>
