@@ -1,10 +1,8 @@
 # terminalweb
 
-$ terminalweb
-
-$ status: online 🟢
-
-$ since: 2026
+- terminalweb
+- status: online 🟢
+- since: 2026
 
 
 rules for the Developers:
