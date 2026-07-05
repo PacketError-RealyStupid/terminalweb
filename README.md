@@ -1,5 +1,10 @@
 # terminalweb
 
+$ terminalweb
+$ status: online 🟢
+$ since: 2026
+
+
 rules for the Developers:
 
 1. Watch out for the messages of the other person!
