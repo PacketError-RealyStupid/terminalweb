@@ -1,258 +1,311 @@
-<!--This Page is just a part of a page from a github repo-->
-<a href="https://github.com/nasan016/webshell.git">The github repo for u if you wannt it</a>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>web terminal</title>
+        <style>
+            body {
+                background-color: #000000;
+                font-family: 'Courier New', Courier, monospace;
+                color: #00ff00;
+                height: 100%;
+            }
+            .title {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                min-height: 40vh;
+                width: 100%;
+                color: #00ff00;
+                white-space: pre-wrap;
+            }
+            .title2 {
+                color: #00ff00;
+            }
+            .h11 {
+                margin: 0;
+                font-size: 40px;
+            }
+            .h12 {
+                margin: 0;
+                font-size: 10px;
+            }
+            .h13 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #00ff00;
+                margin-top: -80px;
+                margin-left: -1050px;
+                white-space: pre-wrap;
+            }
+            .line {
+                width: calc (100vw - 16px);
+                height: 2px;
+                margin-bottom: 20px;
+                background-color: #00ff00;
+            }
+            .A {
+                position: relative;
+                top: 40px;
+            }
+            #output {
+                white-space: pre-wrap;
+            }
+            .input-line {
+                display: flex;
+                align-items: center;
+            }
+            .prompt {
+                margin-right: 10px;
+            }
+            input {
+                background-color: transparent;
+                border: none;
+                font-family: inherit;
+                font-size: inherit;
+                outline: none;
+                flex-grow: 1;
+                color: rgb(0, 255, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1 class="h12">
+                
+                          <span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span>
+                          <span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span> </span>
+                          <span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>_</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span>
+                          <span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span>
+                          <span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>/</span><span> </span><span>/</span><span>_</span><span> </span><span>_</span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span>></span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span>></span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>/</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>/</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>/</span><span> </span><span> </span>
+            <span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span>    <span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span>/</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span>
+            <span> </span><span>/</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>\</span><span> </span><span> </span>    <span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span>
+            <span> </span><span>></span><span> </span><span> </span><span> </span><span>_</span><span> </span><span><</span><span>/</span><span>\</span>    <span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>/</span><span>_</span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>|</span><span> </span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span>
+            <span>/</span><span> </span><span> </span><span> </span><span><</span><span>_</span><span>\</span><span> </span><span>\</span><span>/</span>
+            <span>\</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>\</span><span> </span><span>\</span>    <span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span><span>=</span>
+            <span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>/</span>    
+            <span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span>|</span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span>_</span><span> </span><span>\</span><span> </span><span> </span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>_</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span>_</span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span>|</span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span>_</span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>|</span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>/</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span>></span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span>_</span><span> </span><span>_</span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span>\</span><span> </span><span>/</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>|</span><span>/</span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>|</span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>/</span><span> </span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>\</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span> </span><span> </span><span>|</span><span>/</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span> </span><span>/</span><span> </span><span> </span><span>|</span><span> </span><span>|</span><span>_</span><span>_</span><span>/</span><span> </span><span>/</span><span> </span>
+                      <span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>/</span><span>_</span><span>/</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>\</span><span>_</span><span>\</span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>|</span><span> </span><span>|</span><span>_</span><span>|</span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span> </span><span>/</span><span>_</span><span>\</span><span> </span><span> </span><span>|</span><span>_</span><span> </span><span>_</span><span> </span><span>_</span><span>/</span><span> </span><span> </span>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="reset.css">
-  <link rel="icon" type="image/x-png" href="/res/logo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1" />
-  <script src="https://kit.fontawesome.com/d5effce557.js" crossorigin="anonymous"></script>
-  <title>WebShell</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;600&family=Pixelify+Sans&family=VT323&display=swap');
+            </h1>
+        </div>
 
-:root {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 200;
-  --bg: #0C0623;
-  --border: #FFADE2;
-  --text: #F8DDE5;
-  --prompt-default: #A5A7A7;
-  --prompt-1: #FE6BC9;
-  --prompt-2: #70FDFF;
-}
+    <div class="line"></div>
+    <div id="output"><p><span style="color: rgb(179, 251, 142);">Welcome</span><span>&nbsp</span>to the terminal <span style="color: white;">PR</span>! type `<span style="color: #bbef10;">help</span>` to get started!</p></div>
 
-@keyframes typing {
-  from {
-    width: 0
-  }
+        <form id="terminal-form" class="input-line">
+            <span class="prompt">hacker@web-terminal:~$</span>
+            <input type="text" id="command-input" autocomplete="off" autofocus>
+        </form>
 
-  to {
-    width: 100%
-  }
-}
+        <script>
+            const form = document.getElementById('terminal-form');
+            const input = document.getElementById('command-input');
+            const output = document.getElementById('output');
 
-html,
-body {
-  color: var(--text);
-  background-color: var(--bg);
-  height: 100%;
-  font-size: 16px;
-  display: block;
-}
+            let directory = '/home';
 
-html {
-  overflow: auto;
-}
+            form.addEventListener('submit', function(event) {
+                // stop page from reloading
+                event.preventDefault();
 
-body {
-  padding: 16px;
-  box-sizing: border-box;
-}
+                const command = input.value.trim();
+                if (command == '') return;
+                
+                // echo the command back to the screen
+                output.innerHTML += `hacker@web-terminal${directory}:$ ` + command;
+                
+                // processing command logic called
+                processCommand(command);
 
-main {
-  display: block;
-  box-sizing: border-box;
-  height: 100%;
-  border: var(--border) solid 2px;
-  border-radius: 2px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+                // clear input box and scroll down
+                input.value = '';
+                window.scrollTo(0, document.body.scrollHeight);
 
-main::-webkit-scrollbar {
-  display: none;
-}
+                // update the dir
+                document.getElementById('current-dir').innerHTML = directory;
+            });
 
-p {
-  display: block;
-  line-height: 22px;
-  animation: typing 0.5s steps(30, end);
-  white-space: nowrap;
-  overflow: hidden;
-}
+            function processCommand(cmd) {
+                const commandParts = cmd.trim().split(/\s+/);
 
-div {
-  line-height: 22px;
-}
+                const command = commandParts[0];
+                
+                const githubRealyStupid = "https://github.com/RealyStupid"; 
+                const githubPacketError = "https://github.com/PacketError";
 
-@font-face {
-  font-family: ascii;
-  src: url("./font/IBMPlexMono-Thin.ttf")
-}
+                const terminalOutputColor = "#68df79";
+                const directoryColor = "#00baff";
+                const fileColor = "#ffffff";
+                const errorColor = "#d50000";
+                const textColor = "#02cb1f";
 
-pre {
-  margin: 0;
-  padding: 0;
-  line-height: 20px !important;
-  color: #FF9951;
-  font-family: "ascii", monospace;
-}
+                //---- directories ----
+                //---- realystupid dir ----
+                const RealyStupidDir = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">about-me.txt    my-goals.txt    contacts.txt</p>`;
+                const RScontactsTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">My Email:\nther3al.re4ly.stupid@gmail.com\n</p>`;
+                const RSaboutmeTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">Hello, I'm RealyStupid!\nI am a young dev that dabbles into almost everything.\nMy main language i use is python, but i do know C#, and litle C/C++!\nI am teaching myself cyber security and learning to become a better programer!\nI am also contributing to a website called rootthisbox.org! I helped out with creating themes for the site and hunt down and fix bugs found within the newly added admin pannel.</p>`;
+                const RSmygoalsTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">My goal in life is to be surrounded by computers! To have my own home server to do many high computational work! And become a full red hat hacker!`;
 
-input {
-  font-family: 'IBM Plex Mono', monospace;
-  padding: 0px;
-  margin: 0px;
-  border: none;
-  resize: none;
-  outline: none;
-  font-size: 16px;
-  color: #FF7685;
-  caret-color: var(--prompt-default);
-  width: 50%;
-}
+                //---- packet error dir ----
+                const Packet_errorDir = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">about-me.txt    contacts.txt</p>`;
+                const PEcontactsTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">First Things First my Email:\npacket.error@proton.me\n</p>`;
+                const PEaboutmeTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">Hello, I'm Packet Error! and just copying everythinhg from RealyStupid :D</p>`;
 
-a {
-  color: #B6AAEE;
-}
+                if(command === 'help'){
+                    if(commandParts.length === 1){
+                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Welcome To the web terminal made by <a href="${githubRealyStupid}" target="_blank" style="color: #00ff00; text-decoration: underline;">RealyStupid</a> and <a href="${githubPacketError}" target="_blank" style="color: #00ff00; text-decoration: underline;">Packet Error</a>!\nHere is a list of commmands to get started!:\nls) list files or folders inside a directory \ncat) read the context of the files \ncd) change the current directory (if alone it will move you to <span style="color: ${directoryColor};">/home/hacker/web-terminal/targets</span>)\npwd) show the current working directory \nclear) to clear the terminal screen\necho) to echo some text lol</p>`;
+                    }
+                    else {
+                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Too many arguments for 'help'</p>`;
+                    }
+                }
+                else if(command === 'pwd'){
+                    if(commandParts.length === 1){
+                        output.innerHTML += `<p style="color: ${directoryColor}; margin: 0px; padding: 0px;">${directory}</p>`;
+                    }
+                    else {
+                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Too many arguments for 'pwd'</p>`;
+                    }
+                }
+                else if(command === 'ls') {
+                    // home dir
+                    if(directory === '/home') {
 
-a:hover {
-  background-color: var(--border);
-  color: var(--bg);
-}
+                        // home dir and checking inside this dir
+                        if(commandParts.length === 1){
+                            output.innerHTML += `<p style="color: ${directoryColor}; margin: 0px; padding: 0px;">RealyStupid    Packet_Error</p>`;
+                        }
+                        // home dir and checking inside realystupid dir
+                        else if(commandParts[1] === 'RealyStupid'){
+                            output.innerHTML += `${RealyStupidDir}`;
+                        }
+                        // home dir and checking inside Packet Error dir
+                        else if(commandParts[1] === 'Packet_Error'){
+                            output.innerHTML += `${Packet_errorDir}`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                        }
+                    }
+                    else if(directory === '/home/hacker/web-terminal/targets/RealyStupid') {
+                        if(commandParts.length === 1){
+                            output.innerHTML += `${RealyStupidDir}`;
+                        }
+                        else if(commandParts[1] === '../Packet_Error'){
+                            output.innerHTML += `${Packet_errorDir}`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                        }
+                    }
+                    else if(directory === '/Packet_Error') {
+                        if(commandParts.length === 1){
+                            output.innerHTML += `${Packet_errorDir}`;
+                        }
+                        else if(commandParts[1] === 'RealyStupid'){
+                            output.innerHTML += `${RealyStupidDir}`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                        }
+                    }
 
-#bars {
-  font-family: 'Pixelify Sans', sans-serif;
-  font-size: 20px;
-  position: -webkit-sticky;
-  position: sticky;
-  width: 100%;
-  top: 0;
-  background-color: var(--bg);
-}
-
-#bar-1 {
-  height: 36px;
-  background-color: var(--border);
-  color: var(--bg);
-  line-height: 36px;
-  padding-left: 10px;
-}
-
-#bar-2 {
-  height: 4px;
-  background-color: var(--border);
-  margin-top: 1px;
-}
-
-#bar-3 {
-  height: 3px;
-  background-color: var(--border);
-  margin-top: 2px;
-}
-
-#bar-4 {
-  height: 2px;
-  background-color: var(--border);
-  margin-top: 3px;
-}
-
-
-#bar-5 {
-  height: 1px;
-  background-color: var(--border);
-  margin-top: 4px;
-}
-
-#terminal {
-  margin-left: 20px;
-}
-
-#input-line {
-  margin-left: 20px;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.command {
-  text-shadow:
-    0 0 7px #fff,
-    0 0 151px var(--border);
-  color: #FD9BDB;
-}
-
-.output {
-  font-weight: 400 !important;
-}
-
-.keys {
-  color: #FF9951;
-  font-weight: 400;
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 10px;
-    padding: 2px;
-    font-weight: 300;
-  }
-
-  input {
-    font-size: 10px;
-  }
-
-  p {
-    line-height: 14px;
-  }
-
-  pre {
-    line-height: 12px !important;
-    font-size: 9px;
-  }
-
-  main {
-    border-width: 1px;
-  }
-
-  div {
-    line-height: 14px;
-  }
-
-  #terminal {
-    margin-left: 8px;
-  }
-
-  #input-line {
-    margin-left: 8px;
-  }
-}
-  </style>
-</head>
-
-<body>
-  <main id="main">
-    <div id="bars">
-      <div id="bar-1">WebShell.x64_x86</div>
-      <div id="bar-2"></div>
-      <div id="bar-3"></div>
-      <div id="bar-4"></div>
-      <div id="bar-5"></div>
-    </div>
-    <br>
-    <div id="terminal">
-      <div>
-        <span id="prompt"><span id="pre-user"></span>@<span id="pre-host"></span>:$ ~ </span>
-      </div>
-      <!-- command output will be inserted before #write-lines-->
-      <a id="write-lines"></a>
-    </div>
-    <div id="input-line">
-      <div>
-        <p id="password-input" style="display: none;">Password: <input id="password-field" autocomplete="off"
-            type="password" /></p>
-        <p id="input-hidden">
-            <h1>@user:</h1>
-            <input type="text">
-        </p>
-      </div>
-      <br>
-    </div>
-  </main>
-</body>
-
+                    else{
+                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">Internal directory error</p>`;
+                    }
+                }
+                else if(command === 'cd'){
+                    if(commandParts.length === 1){
+                        directory = '/home';
+                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                    }
+                    // if inside home dir moving to other dir
+                    else if(directory === '/home/hacker/web-terminal/targets'){
+                        if(commandParts[1] === 'RealyStupid'){
+                            directory = '/home/hacker/web-terminal/targets/RealyStupid';
+                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                        }
+                        else if(commandParts[1] === '/home/Packet_Error'){
+                            directory = '/home/Packet_Error';
+                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
+                        }
+                    }
+                    else if (directory === '/home/hacker/web-terminal/targets/RealyStupid'){
+                        if(commandParts[1] === '..' || commandParts[1] === '../'){
+                            directory = '/home/hacker/web-terminal/targets';
+                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
+                        }
+                    }
+                    else if (directory === '/home/Packet_Error'){
+                        if(commandParts[1] === '..' || commandParts[1] === '../'){
+                            directory = '/home';
+                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
+                        }
+                    }
+                    else{
+                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">Internal directory error</p>`;
+                    }
+                }
+                else if(command === 'cat'){
+                    if(commandParts.length === 1){
+                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">No file passed</p>`;
+                    }
+                    else if(directory === '/home/hacker/web-terminal/targets/RealyStupid'){
+                        if(commandParts[1] === 'contacts.txt'){
+                            output.innerHTML += `${RScontactsTXT}`;
+                        }
+                        else if(commandParts[1] === 'about-me.txt'){
+                            output.innerHTML += `${RSaboutmeTXT}`;
+                        }
+                        else if(commandParts[1] === 'my-goals.txt'){
+                            output.innerHTML += `${RSmygoalsTXT}`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                        }
+                    }
+                    else if( directory === '/home/Packet_Error'){
+                        if(commandParts[1] === 'about-me.txt'){
+                            output.innerHTML += `${PEaboutmeTXT}`;
+                        }
+                        else if(commandParts[1] === 'contacts.txt'){
+                            output.innerHTML += `${PEcontactsTXT}`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                        }
+                    }
+                    else{
+                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                    }
+                }
+                else if(command === 'clear'){
+                    output.innerHTML = '';
+                }
+                else if(command === 'echo'){
+                    output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">${commandParts.slice(1).join(' ')}</p>`;
+                }
+                else {
+                    output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;"><span style="color: #fb2b2b;">${command}</span>: command not found...</p>`;
+                }
+            }
+        </script>
+    </body>
 </html>
