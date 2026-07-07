@@ -101,7 +101,7 @@
     <div id="output"><p><span style="color: rgb(179, 251, 142);">Welcome</span><span>&nbsp</span>to the terminal <span style="color: white;">PR</span>! type `<span style="color: #bbef10;">help</span>` to get started!</p></div>
 
         <form id="terminal-form" class="input-line">
-            <span class="prompt">hacker@web-terminal:~$</span>
+            <span class="prompt">hacker@web-terminal/home:~$</span>
             <input type="text" id="command-input" autocomplete="off" autofocus>
         </form>
 
@@ -120,7 +120,7 @@
                 if (command == '') return;
                 
                 // echo the command back to the screen
-                output.innerHTML += `hacker@web-terminal${directory}:$ ` + command;
+                output.innerHTML += `hacker@web-terminal${directory}:~$ ` + command;
                 
                 // processing command logic called
                 processCommand(command);
@@ -130,7 +130,7 @@
                 window.scrollTo(0, document.body.scrollHeight);
 
                 // update the dir
-                document.getElementById('current-dir').innerHTML = directory;
+                document.getElementById('prompt-prefix').innerHTML = `hacker@web-terminal${directory}:~$ `;
             });
 
             function processCommand(cmd) {
@@ -161,7 +161,7 @@
 
                 if(command === 'help'){
                     if(commandParts.length === 1){
-                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Welcome To the web terminal made by <a href="${githubRealyStupid}" target="_blank" style="color: #00ff00; text-decoration: underline;">RealyStupid</a> and <a href="${githubPacketError}" target="_blank" style="color: #00ff00; text-decoration: underline;">Packet Error</a>!\nHere is a list of commmands to get started!:\nls) list files or folders inside a directory \ncat) read the context of the files \ncd) change the current directory (if alone it will move you to <span style="color: ${directoryColor};">/home/hacker/web-terminal/targets</span>)\npwd) show the current working directory \nclear) to clear the terminal screen\necho) to echo some text lol</p>`;
+                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Welcome To the web terminal made by <a href="${githubRealyStupid}" target="_blank" style="color: #00ff00; text-decoration: underline;">RealyStupid</a> and <a href="${githubPacketError}" target="_blank" style="color: #00ff00; text-decoration: underline;">PacketError</a>!\nHere is a list of commmands to get started!:\nls) list files or folders inside a directory \ncat) read the context of the files \ncd) change the current directory (if alone it will move you to <span style="color: ${directoryColor};">/home</span>)\npwd) show the current working directory \nclear) to clear the terminal screen\necho) to echo some text lol</p>`;
                     }
                     else {
                         output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Too many arguments for 'help'</p>`;
@@ -181,40 +181,40 @@
 
                         // home dir and checking inside this dir
                         if(commandParts.length === 1){
-                            output.innerHTML += `<p style="color: ${directoryColor}; margin: 0px; padding: 0px;">RealyStupid    Packet_Error</p>`;
+                            output.innerHTML += `<p style="color: ${directoryColor}; margin: 0px; padding: 0px;">RealyStupid    PacketError</p>`;
                         }
                         // home dir and checking inside realystupid dir
-                        else if(commandParts[1] === 'RealyStupid'){
+                        else if(commandParts[1] === '/RealyStupid'){
                             output.innerHTML += `${RealyStupidDir}`;
                         }
                         // home dir and checking inside Packet Error dir
-                        else if(commandParts[1] === 'Packet_Error'){
+                        else if(commandParts[1] === '/PacketError'){
                             output.innerHTML += `${Packet_errorDir}`;
                         }
                         else{
                             output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
                         }
                     }
-                    else if(directory === '/home/hacker/web-terminal/targets/RealyStupid') {
+                    else if(directory === '/RealyStupid') {
                         if(commandParts.length === 1){
                             output.innerHTML += `${RealyStupidDir}`;
                         }
-                        else if(commandParts[1] === '../Packet_Error'){
+                        else if(commandParts[1] === '../PacketError'){
                             output.innerHTML += `${Packet_errorDir}`;
                         }
                         else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access ':~${commandParts[1]}': No such file or directory</p>`;
                         }
                     }
-                    else if(directory === '/Packet_Error') {
+                    else if(directory === '/PacketError') {
                         if(commandParts.length === 1){
                             output.innerHTML += `${Packet_errorDir}`;
                         }
-                        else if(commandParts[1] === 'RealyStupid'){
+                        else if(commandParts[1] === '../RealyStupid'){
                             output.innerHTML += `${RealyStupidDir}`;
                         }
                         else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access ':~${commandParts[1]}': No such file or directory</p>`;
                         }
                     }
 
@@ -228,82 +228,82 @@
                         output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
                     }
                     // if inside home dir moving to other dir
-                    else if(directory === '/home/hacker/web-terminal/targets'){
+                    else if(directory === '/home'){
                         if(commandParts[1] === 'RealyStupid'){
-                            directory = '/home/hacker/web-terminal/targets/RealyStupid';
-                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                            directory = '/RealyStupid';
+                            output.innerHTML += `<p style="color: :~${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
                         }
-                        else if(commandParts[1] === '/home/Packet_Error'){
-                            directory = '/home/Packet_Error';
-                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
-                        }
-                        else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
-                        }
-                    }
-                    else if (directory === '/home/hacker/web-terminal/targets/RealyStupid'){
-                        if(commandParts[1] === '..' || commandParts[1] === '../'){
-                            directory = '/home/hacker/web-terminal/targets';
-                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                        else if(commandParts[1] === 'PacketError'){
+                            directory = '/PacketError';
+                            output.innerHTML += `<p style="color: :~${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
                         }
                         else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
+                            output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
                         }
                     }
-                    else if (directory === '/home/Packet_Error'){
+                    else if (directory === '/RealyStupid'){
                         if(commandParts[1] === '..' || commandParts[1] === '../'){
                             directory = '/home';
-                            output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                            output.innerHTML += `<p style="color: :~${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
                         }
                         else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
+                            output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
+                        }
+                    }
+                    else if (directory === '/PacketError'){
+                        if(commandParts[1] === '..' || commandParts[1] === '../'){
+                            directory = '/home';
+                            output.innerHTML += `<p style="color: :~${terminalOutputColor}; margin: 0px; padding: 0px;"></p>`;
+                        }
+                        else{
+                            output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">cd: ${commandParts[1]}: No such file or directory</p>`;
                         }
                     }
                     else{
-                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">Internal directory error</p>`;
+                        output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">Internal directory error</p>`;
                     }
                 }
                 else if(command === 'cat'){
                     if(commandParts.length === 1){
-                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">No file passed</p>`;
+                        output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">No file passed</p>`;
                     }
-                    else if(directory === '/home/hacker/web-terminal/targets/RealyStupid'){
+                    else if(directory === '/RealyStupid'){
                         if(commandParts[1] === 'contacts.txt'){
-                            output.innerHTML += `${RScontactsTXT}`;
+                            output.innerHTML += `:~${RScontactsTXT}`;
                         }
                         else if(commandParts[1] === 'about-me.txt'){
-                            output.innerHTML += `${RSaboutmeTXT}`;
+                            output.innerHTML += `:~${RSaboutmeTXT}`;
                         }
                         else if(commandParts[1] === 'my-goals.txt'){
-                            output.innerHTML += `${RSmygoalsTXT}`;
+                            output.innerHTML += `:~${RSmygoalsTXT}`;
                         }
                         else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                            output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
                         }
                     }
-                    else if( directory === '/home/Packet_Error'){
+                    else if( directory === '/PacketError'){
                         if(commandParts[1] === 'about-me.txt'){
-                            output.innerHTML += `${PEaboutmeTXT}`;
+                            output.innerHTML += `:~${PEaboutmeTXT}`;
                         }
                         else if(commandParts[1] === 'contacts.txt'){
-                            output.innerHTML += `${PEcontactsTXT}`;
+                            output.innerHTML += `:~${PEcontactsTXT}`;
                         }
                         else{
-                            output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                            output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
                         }
                     }
                     else{
-                        output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
+                        output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
                     }
                 }
                 else if(command === 'clear'){
                     output.innerHTML = '';
                 }
                 else if(command === 'echo'){
-                    output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">${commandParts.slice(1).join(' ')}</p>`;
+                    output.innerHTML += `<p style="color: :~${terminalOutputColor}; margin: 0px; padding: 0px;">${commandParts.slice(1).join(' ')}</p>`;
                 }
                 else {
-                    output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;"><span style="color: #fb2b2b;">${command}</span>: command not found...</p>`;
+                    output.innerHTML += `<p style="color: :~${errorColor}; margin: 0px; padding: 0px;"><span style="color: #fb2b2b;">${command}</span>: command not found...</p>`;
                 }
             }
         </script>
