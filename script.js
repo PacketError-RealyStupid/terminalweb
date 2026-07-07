@@ -12,7 +12,7 @@ const form = document.getElementById('terminal-form');
                 if (command == '') return;
                 
                 // echo the command back to the screen
-                output.innerHTML += 'hacker@web-terminal:~$ ' + command;
+                output.innerHTML += `hacker@web-terminal:${directory}$ ` + command;
                 
                 // processing command logic called
                 processCommand(command);
@@ -20,6 +20,9 @@ const form = document.getElementById('terminal-form');
                 // clear input box and scroll down
                 input.value = '';
                 window.scrollTo(0, document.body.scrollHeight);
+
+                // update the dir
+                document.getElementById('current-dir').innerHTML = directory;
             });
 
             function processCommand(cmd) {
@@ -50,7 +53,7 @@ const form = document.getElementById('terminal-form');
 
                 if(command === 'help'){
                     if(commandParts.length === 1){
-                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Welcome To the web terminal made by <a href="${githubRealyStupid}" target="_blank" style="color: #00ff00; text-decoration: underline;">RealyStupid</a> and <a href="${githubPacketError}" target="_blank" style="color: #00ff00; text-decoration: underline;">Packet Error</a>!\nHere is a list of commmands to get started!:\nls) list files or folders inside a directory \ncat) read the context of the files \ncd) change the current directory (if alone it will move you to <span style="color: ${directoryColor};">/home/hacker/web-terminal/targets</span>)\npwd) show the current working directory \nclear) to clear the terminal screen</p>`;
+                        output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Welcome To the web terminal made by <a href="${githubRealyStupid}" target="_blank" style="color: #00ff00; text-decoration: underline;">RealyStupid</a> and <a href="${githubPacketError}" target="_blank" style="color: #00ff00; text-decoration: underline;">Packet Error</a>!\nHere is a list of commmands to get started!:\nls) list files or folders inside a directory \ncat) read the context of the files \ncd) change the current directory (if alone it will move you to <span style="color: ${directoryColor};">/home/hacker/web-terminal/targets</span>)\npwd) show the current working directory \nclear) to clear the terminal screen\necho) to echo some text lol</p>`;
                     }
                     else {
                         output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">Too many arguments for 'help'</p>`;
@@ -187,6 +190,9 @@ const form = document.getElementById('terminal-form');
                 }
                 else if(command === 'clear'){
                     output.innerHTML = '';
+                }
+                else if(command === 'echo'){
+                    output.innerHTML += `<p style="color: ${terminalOutputColor}; margin: 0px; padding: 0px;">${commandParts.slice(1).join(' ')}</p>`;
                 }
                 else {
                     output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;"><span style="color: #fb2b2b;">${command}</span>: command not found...</p>`;
