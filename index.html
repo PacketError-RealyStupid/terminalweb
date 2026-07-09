@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>web terminal</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PacketError</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
         <div class="title">
             <h1 class="h12">
                 
@@ -33,13 +34,14 @@
         </div>
 
     <div class="line"></div>
-    <div id="output"><p><span style="color: rgb(179, 251, 142);">Welcome</span><span>&nbsp</span>to the terminal <span style="color: white;">PR</span>! type `<span style="color: #bbef10;">help</span>` to get started!</p></div>
+    
+    <div id="output"><p><span style="color: rgb(179, 251, 142);">Welcome</span> to the terminal <span style="color: white;">PR</span>! Type `<span style="color: #bbef10;">help</span>` to get started!</p></div>
 
-        <form id="terminal-form" class="input-line">
-            <span class="prompt">hacker@web-terminal:<span id="current-dir">/home/hacker/web-terminal/targets</span>$</span>
-            <input type="text" id="command-input" autocomplete="off" autofocus>
-        </form>
+    <form id="terminal-form" class="input-line">
+        <span class="prompt" id="prompt-prefix">hacker@web-terminal/home:~$</span>
+        <input type="text" id="command-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+    </form>
 
-        <script src="script.js"></script>      
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
