@@ -58,9 +58,10 @@ function processCommand(cmd) {
     const RSmygoalsTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">My goal in life is to be surrounded by computers! To have my own home server to do many high computational work! And become a full red hat hacker!</p>`;
 
     // ---- PACKET ERROR DIR DATA ----
-    const Packet_errorDir = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">about-me.txt    contacts.txt</p>`;
+    const Packet_errorDir = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">about-me.txt    contacts.txt   </p>`;
     const PEcontactsTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">First Things First my Email:\npacket.error@proton.me\n</p>`;
     const PEaboutmeTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">Hello, I'm Packet Error! and just copying everything from RealyStupid :D</p>`;
+    // const PElinkTXT = `<p style="color: ${fileColor}; margin: 0px; padding: 0px;">My Links:<br><a href="https://www.example.com">Nothing Here</a></p>`;
 
     if (command === 'help') {
         if (commandParts.length === 1) {
@@ -146,6 +147,8 @@ function processCommand(cmd) {
                 output.innerHTML += `${PEaboutmeTXT}`;
             } else if (commandParts[1] === 'contacts.txt') {
                 output.innerHTML += `${PEcontactsTXT}`;
+            // } else if (commandParts[1] === 'links.txt') {
+                // output.innerHTML += `${PElinkTXT}`;
             } else {
                 output.innerHTML += `<p style="color: ${errorColor}; margin: 0px; padding: 0px;">cannot access '${commandParts[1]}': No such file or directory</p>`;
             }
