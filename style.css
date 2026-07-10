@@ -48,7 +48,6 @@ input {
     flex-grow: 1;
     color: rgb(0, 255, 0);
 }
-
 .ascii-container {
     width: 100%;
     overflow-x: auto;
@@ -56,7 +55,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0f0f14;
+    background-color: black;
     padding: 20px 0;
     margin-bottom: 10px;
 }
