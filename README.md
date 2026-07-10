@@ -3,5 +3,5 @@
 - terminalweb
 - status: online 🟢
 - since: 2026
-
-We Are Working on the Title design in a few hours 🚧
+- Cooperation from <a href="https://github.com/PacketError">@PacketError</a> and <a href="https://github.com/RealyStupid">@RealyStupid</a>
+if you're missing something on the website just ask and we look if we add it
